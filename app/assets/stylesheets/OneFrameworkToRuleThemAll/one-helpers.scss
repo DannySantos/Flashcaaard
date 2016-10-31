@@ -1,0 +1,179 @@
+.fz-1em {
+  font-size: 1em !important;
+}
+
+.fwn {
+  font-weight: normal !important;
+}
+
+.fwb {
+  font-weight: bold;
+}
+
+.wi {
+  width: initial !important;
+}
+
+.poa {
+  position: absolute !important;
+}
+
+.por {
+  position: relative !important;
+}
+
+.t0 {
+  top: 0 !important;
+}
+
+.b0 {
+  bottom: 0 !important;
+}
+
+.l0 {
+  left: 0 !important;
+}
+
+.r0 {
+  right: 0 !important;
+}
+
+.di {
+  display: inline !important;
+}
+
+.db {
+  display: block !important;
+}
+
+.dib {
+  display: inline-block !important;
+}
+
+.dn {
+  display: none !important;
+}
+
+.m-a {
+  margin: auto !important;
+}
+
+.large-text  {
+  font-size: 3em !important;
+}
+
+.larger-text  {
+  font-size: 1.5em !important;
+}
+
+.small-text  {
+  font-size: 0.8em !important;
+}
+
+.smallest-text  {
+  font-size: 0.5em !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.td-0 {
+  text-decoration: none !important;
+}
+
+.ul-0 {
+  a:hover {
+    text-decoration: none !important;
+  }
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.list-0 {
+	list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+$pixel-sizes: 0 1 2 3 4 5 6 7 8 9 10 15 20 25 30 35 40 45 50 101 150 200 250 300;
+
+@each $size in $pixel-sizes {
+  .w-#{$size} {
+    width: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .m-#{$size} {
+    margin: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .mt-#{$size} {
+    margin-top: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .mr-#{$size} {
+    margin-right: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .mb-#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .ml-#{$size} {
+    margin-left: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .p-#{$size} {
+    padding: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .pt-#{$size} {
+    padding-top: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .pr-#{$size} {
+    padding-right: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .pb-#{$size} {
+    padding-bottom: #{$size}px !important;
+  }
+}
+
+@each $size in $pixel-sizes {
+  .pl-#{$size} {
+    padding-left: #{$size}px !important;
+  }
+}
