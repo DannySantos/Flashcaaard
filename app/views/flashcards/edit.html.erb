@@ -1,6 +1,12 @@
-<h1>Edit flashcard</h1>
+<div class="container flashcard-edit">
+  <div class="row">
+    <h1>Edit flashcard</h1>
 
-<%= form_for(@flashcard) do |f| %>
-  <%= render "flashcard_form", f: f %>
-  <%= f.submit "Save Changes" %>
-<% end %>
+    <div class="col-sm-8">
+      <%= form_for(@flashcard) do |f| %>
+        <%= render "flashcard_form", f: f %>
+        <%= f.submit "Save Changes", class: "form-control btn btn-flash mt-10" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+@import 'variables';
+
+header.primary {
+  background-color: $primary_color;
+  
+  nav {
+    background-color: #fff;
+    padding: 5px 0 5px 15px;
+    margin-right: 10px;
+    border-radius: 0 0 5px 5px;
+    font-size: 0.8em;
+    
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+}

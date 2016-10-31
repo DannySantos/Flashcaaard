@@ -1,4 +1,22 @@
-<%= @flashcard.question.html_safe %>
-<%= @flashcard.answer.html_safe %>
-
-<%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard) %>
+<div class="container flashcard-show">
+  <div class="row">
+    <div class="flashcard-nav col-sm-2 text-center">
+      &lsaquo;
+    </div>
+    
+    <div class="flashcard col-sm-8 text-center">
+      <div class="d-tbc vam">
+        <h1><%= @flashcard.question.html_safe %></h1>
+        <%= @flashcard.answer.html_safe %>
+      </div>
+    </div>
+    
+    <div class="flashcard-nav col-sm-2 text-center">
+      &rsaquo;
+    </div>
+  </div>
+  
+  <div class="text-center m-10">
+    <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash" %>
+  </div>
+</div>

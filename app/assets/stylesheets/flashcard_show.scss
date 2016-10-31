@@ -1,0 +1,17 @@
+.flashcard-show {
+  .flashcard {
+    background-color: #f7f7f7;
+    min-height: 500px;
+    display: table;
+    
+    h1 {
+      font-size: 3em;
+    }
+  }
+  
+  .flashcard-nav {
+    min-height: 500px;
+    line-height: 500px;
+    font-size: 170px;
+  }
+}

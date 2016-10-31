@@ -10,11 +10,41 @@
   </head>
 
   <body>
+    <header class="container-fluid primary pt-30 pb-30">
+      <nav class="poa t0 r0">
+        <ul class="text-right list-0">
+          <% if current_user %>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Log In", new_user_session_path %>
+            </li>
+
+            <li>
+              <%= link_to "Register", new_user_registration_path %>
+            </li>   
+          <% end %>    
+        </ul> 
+      </nav> 
+      
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <%= link_to root_path do %>
+          <%= image_tag "flashcards_logo" %>
+        <% end %> 
+      </div> 
+    </header>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-
     <%= yield %>
+      
+    <div class="clearfix"></div>
+
+    <footer class="primary">
+      &copy; Copyright <%= Date.today.year %>
+    </footer>
   </body>
 </html>

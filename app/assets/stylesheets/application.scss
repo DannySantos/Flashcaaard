@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+@import '_variables';
+  
+.btn-flash {
+  background-color: $primary_color;
+  color: #fff;
+}
+  
+.btn-flash:hover {
+  background-color: $primary_color_dark;
+  color: #fff;
+  text-decoration: none;
+}
+
+footer.primary {
+  margin-top: 100px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background-color: #333;
+  color: #fff;
+}

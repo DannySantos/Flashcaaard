@@ -1,6 +1,12 @@
-<h1>Create a new flashcard</h1>
+<div class="container flashcard-new">
+  <div class="row">
+    <h1>Create a new flashcard</h1>
 
-<%= form_for(@flashcard) do |f| %>
-  <%= render "flashcard_form", f: f %>
-  <%= f.submit "Create Flashcard" %>
-<% end %>
+    <div class="col-sm-8">
+      <%= form_for(@flashcard) do |f| %>
+        <%= render "flashcard_form", f: f %>
+        <%= f.submit "Create Flashcard", class: "form-control btn btn-flash mt-10" %>
+      <% end %>
+    </div>
+  </div>
+</div>
