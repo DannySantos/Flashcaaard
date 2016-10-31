@@ -1,0 +1,11 @@
+<h1>Create a new flashcard</h1>
+
+<%= form_for(@flashcard) do |f| %>
+  <%= f.label :question %>
+  <%= f.text_area :question, class: "tinymce" %>
+
+  <%= f.label :answer %>
+  <%= f.text_area :answer, class: "tinymce" %>
+  
+  <%= f.submit "Create Flashcard" %>
+<% end %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'flashcards/new'
+
   root to: 'application#index'
+  devise_for :users
+  resources :flashcards, only: [:new, :create, :show]
 end
