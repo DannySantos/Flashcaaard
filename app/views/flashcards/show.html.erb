@@ -1,2 +1,4 @@
 <%= @flashcard.question.html_safe %>
 <%= @flashcard.answer.html_safe %>
+
+<%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard) %>

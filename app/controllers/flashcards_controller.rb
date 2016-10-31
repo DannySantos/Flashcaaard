@@ -13,8 +13,22 @@ class FlashcardsController < ApplicationController
     end
   end
   
+  def edit 
+    @flashcard = Flashcard.find(params[:id])
+  end
+  
   def show
     @flashcard = Flashcard.find(params[:id])
+  end
+  
+  def update
+    @flashcard = Flashcard.find(params[:id])
+    
+    if @flashcard.update(flashcard_params)
+      redirect_to flashcard_path(@flashcard)
+    else
+      render :edit
+    end
   end
   
   private

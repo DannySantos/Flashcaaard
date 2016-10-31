@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
   devise_for :users
-  resources :flashcards, only: [:new, :create, :show]
+  resources :flashcards
 end

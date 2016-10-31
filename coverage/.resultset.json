@@ -14,10 +14,32 @@
         1,
         null
       ],
+      "/Users/dannysantos/projects/Flashcaaard/app/models/flashcard.rb": [
+        1,
+        null
+      ],
       "/Users/dannysantos/projects/Flashcaaard/app/controllers/flashcards_controller.rb": [
         1,
         1,
+        0,
+        null,
+        null,
         1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
         null,
         null,
         1,
@@ -28,10 +50,6 @@
         null,
         0,
         null,
-        null,
-        null,
-        1,
-        1,
         null,
         null,
         1,
@@ -50,10 +68,6 @@
         null
       ],
       "/Users/dannysantos/projects/Flashcaaard/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/dannysantos/projects/Flashcaaard/app/models/flashcard.rb": [
         1,
         null
       ],
@@ -80,7 +94,7 @@
         0
       ]
     },
-    "timestamp": 1477922568
+    "timestamp": 1477924889
   },
   "RSpec": {
     "coverage": {
