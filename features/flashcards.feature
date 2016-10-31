@@ -8,7 +8,6 @@ Feature: Flashcards
       And they click on "Create Flashcard"
     Then the flashcard should be created
 
-  @wip
   Scenario: A user edits a flashcard
     Given a User has previously registered
       And they have created a flashcard

@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-31T14:41:29+00:00">2016-10-31T14:41:29+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-31T21:08:19+00:00">2016-10-31T21:08:19+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">53.49%</span></span>
+    (<span class="covered_percent"><span class="red">62.79%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.58
+         0.72
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>10</b> files in total.
     <b>43</b> relevant lines. 
-    <span class="green"><b>23</b> lines covered</span> and
-    <span class="red"><b>20</b> lines missed </span>
+    <span class="green"><b>27</b> lines covered</span> and
+    <span class="red"><b>16</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#938ba30e0919222ba01d2416df18d5b30e20bdba" class="src_link" title="app/controllers/flashcards_controller.rb">app/controllers/flashcards_controller.rb</a></td>
-        <td class="red strong">70.0 %</td>
+        <td class="yellow strong">90.0 %</td>
         <td>39</td>
         <td>20</td>
-        <td>14</td>
-        <td>6</td>
-        <td>0.8</td>
+        <td>18</td>
+        <td>2</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -159,11 +159,11 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">73.91%</span></span>
+    (<span class="covered_percent"><span class="green">91.3%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.83
+       <span class="green">
+         1.09
        </span>
     </span> hits/line)
   </h2>
@@ -171,8 +171,8 @@
   <div>
     <b>2</b> files in total.
     <b>23</b> relevant lines. 
-    <span class="green"><b>17</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed </span>
+    <span class="green"><b>21</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -200,12 +200,12 @@
       
       <tr>
         <td class="strong"><a href="#938ba30e0919222ba01d2416df18d5b30e20bdba" class="src_link" title="app/controllers/flashcards_controller.rb">app/controllers/flashcards_controller.rb</a></td>
-        <td class="red strong">70.0 %</td>
+        <td class="yellow strong">90.0 %</td>
         <td>39</td>
         <td>20</td>
-        <td>14</td>
-        <td>6</td>
-        <td>0.8</td>
+        <td>18</td>
+        <td>2</td>
+        <td>1.1</td>
       </tr>
       
     </tbody>
@@ -666,11 +666,11 @@
         <div class="source_table" id="938ba30e0919222ba01d2416df18d5b30e20bdba">
   <div class="header">
     <h3>app/controllers/flashcards_controller.rb</h3>
-    <h4><span class="red">70.0 %</span> covered</h4>
+    <h4><span class="yellow">90.0 %</span> covered</h4>
     <div>
       <b>20</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -689,8 +689,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
           <code class="ruby">    @flashcard = Flashcard.new</code>
         </li>
@@ -713,8 +713,8 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
           <code class="ruby">    @flashcard = Flashcard.new(flashcard_params)</code>
         </li>
@@ -725,14 +725,14 @@
           <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">    if @flashcard.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to flashcard_path(@flashcard)</code>
         </li>
@@ -797,8 +797,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="21">
+          <span class="hits">3</span>
           
           <code class="ruby">    @flashcard = Flashcard.find(params[:id])</code>
         </li>
@@ -893,8 +893,8 @@
           <code class="ruby">  def flashcard_params</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
           
           <code class="ruby">    params.require(:flashcard).permit(:question, :answer)</code>
         </li>
