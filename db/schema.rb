@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031142023) do
+ActiveRecord::Schema.define(version: 20161101145151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "flashcard_tags", force: :cascade do |t|
+    t.integer  "flashcard_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["flashcard_id"], name: "index_flashcard_tags_on_flashcard_id", using: :btree
+    t.index ["tag_id"], name: "index_flashcard_tags_on_tag_id", using: :btree
+  end
 
   create_table "flashcards", force: :cascade do |t|
     t.text     "question"
@@ -22,6 +31,12 @@ ActiveRecord::Schema.define(version: 20161031142023) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_flashcards_on_user_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,5 +56,7 @@ ActiveRecord::Schema.define(version: 20161031142023) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "flashcard_tags", "flashcards"
+  add_foreign_key "flashcard_tags", "tags"
   add_foreign_key "flashcards", "users"
 end

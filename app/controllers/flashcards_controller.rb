@@ -20,6 +20,7 @@ class FlashcardsController < ApplicationController
   
   def show
     @flashcard = Flashcard.find(params[:id])
+    @tags = @flashcard.all_tags
   end
   
   def update
@@ -41,6 +42,6 @@ class FlashcardsController < ApplicationController
   private
   
   def flashcard_params
-    params.require(:flashcard).permit(:question, :answer)
+    params.require(:flashcard).permit(:question, :answer, :all_tags)
   end
 end

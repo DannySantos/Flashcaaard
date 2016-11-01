@@ -1,5 +1,8 @@
-<%= f.label :question %>
+<%= f.label :question, "Question/Term" %>
 <%= f.text_area :question, class: "tinymce" %>
 
-<%= f.label :answer %>
+<%= f.label :answer, "Answer/Definition" %>
 <%= f.text_area :answer, class: "tinymce" %>
+
+<%= f.label :all_tags, "Tags" %>
+<%= f.text_field :all_tags, class: "form-control", placeholder: "Tags separated with a space" %>

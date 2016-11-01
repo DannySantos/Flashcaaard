@@ -6,7 +6,8 @@ Given(/^they have created a flashcard$/) do
   @user_flashcard = Flashcard.create!(
     question: "Why are we nice?",
     answer: "MINASWAN",
-    user_id: @user.id
+    user_id: @user.id,
+    all_tags: "ruby matz"
   )
 end
 
@@ -24,7 +25,8 @@ Given(/^there is a flashcard created by another user$/) do
   @non_user_flashcard = Flashcard.create!(
     question: "Why?",
     answer: "Because.",
-    user_id: @user_2.id
+    user_id: @user_2.id,
+    all_tags: "high-philosophy"
   )
 end
 
@@ -58,4 +60,7 @@ end
 Then(/^the flashcard should be created$/) do
   expect(page).to have_content("Why are we nice?")
   expect(page).to have_content("MINASWAN")
+  expect(page).to have_content("ruby")
+  expect(page).to have_content("ruby-on-rails")
+  expect(page).to have_content("uniq-tag")
 end
