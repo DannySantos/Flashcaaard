@@ -3,13 +3,11 @@ Given(/^they are on the registration page$/) do
 end
 
 Given(/^a User has previously registered$/) do
-  @user = User.create!(
-    {
-      email: "test@test.com",
-      password: "password",
-      password_confirmation: "password"
-    }
-  )
+  @user = User.create!({
+    email: "test@test.com",
+    password: "password",
+    password_confirmation: "password"
+  })
 end
 
 Given(/^they are on the log in page$/) do

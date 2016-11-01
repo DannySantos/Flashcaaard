@@ -1,12 +1,16 @@
 <div class="container flashcard-edit">
-  <div class="row">
-    <h1>Edit flashcard</h1>
+  <% if can? :update, @flashcard %>
+    <div class="row">
+      <h1>Edit flashcard</h1>
 
-    <div class="col-sm-8">
-      <%= form_for(@flashcard) do |f| %>
-        <%= render "flashcard_form", f: f %>
-        <%= f.submit "Save Changes", class: "form-control btn btn-flash mt-10" %>
-      <% end %>
+      <div class="col-sm-8">
+        <%= form_for(@flashcard) do |f| %>
+          <%= render "flashcard_form", f: f %>
+          <%= f.submit "Save Changes", class: "form-control btn btn-flash mt-10" %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <p>You can't edit a flashcard that you didn't create!</p>
+  <% end %>
 </div>

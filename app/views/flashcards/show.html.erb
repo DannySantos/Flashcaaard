@@ -17,6 +17,14 @@
   </div>
   
   <div class="text-center m-10">
-    <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash" %>
+    <% if can? :update, @flashcard %>
+    <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash dib" %>
+    <% end %>
+    
+    <% if can? :delete, @flashcard %>
+      <div class="dib">
+        <%= button_to "Delete Flashcard", {controller: 'flashcards', action: 'destroy'}, method: :delete, class: "btn btn-flash" %>
+      </div>
+    <% end %>
   </div>
 </div>

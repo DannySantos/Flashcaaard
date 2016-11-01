@@ -5,7 +5,8 @@ class FlashcardsController < ApplicationController
   
   def create
     @flashcard = Flashcard.new(flashcard_params)
-  
+    @flashcard.user_id = current_user.id
+    
     if @flashcard.save
       redirect_to flashcard_path(@flashcard)
     else
@@ -29,6 +30,12 @@ class FlashcardsController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @flashcard = Flashcard.find(params[:id]).destroy
+    flash[:notice] = "Flashcard deleted"
+    redirect_to root_path
   end
   
   private

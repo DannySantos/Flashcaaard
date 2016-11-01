@@ -14,6 +14,42 @@ Given(/^they are on their flashcard page$/) do
   visit flashcard_path(@user_flashcard)
 end
 
+Given(/^there is a flashcard created by another user$/) do
+  @user_2 = User.create!({
+    email: "second@test.com",
+    password: "password",
+    password_confirmation: "password"
+  })
+  
+  @non_user_flashcard = Flashcard.create!(
+    question: "Why?",
+    answer: "Because.",
+    user_id: @user_2.id
+  )
+end
+
+When(/^they visit a flashcard page created by another user$/) do
+  visit flashcard_path(@non_user_flashcard)
+end
+
+When(/^they visit an edit flashcard page that isn't theirs$/) do
+  visit edit_flashcard_path(@non_user_flashcard)
+end
+
+Then(/^the flashcard should be deleted$/) do
+  expect(Flashcard.count).to eq(0)
+  expect(page).to have_content("Flashcard deleted")
+end
+
+Then(/^they should see an error$/) do
+  expect(page).not_to have_css("form.edit_flashcard")
+  expect(page).to have_content("You can't edit a flashcard that you didn't create!")
+end
+
+Then(/^there should be no edit flashcard button$/) do
+  expect(page).not_to have_content("Edit Flashcard")
+end
+
 Then(/^the flashcard should be updated$/) do
   expect(page).to have_content("Why the lucky stiff?")
   expect(page).to have_content("J******n G******e")
