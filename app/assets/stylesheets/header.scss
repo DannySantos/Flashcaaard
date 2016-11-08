@@ -2,18 +2,36 @@
 
 header.primary {
   background-color: $primary_color;
+  height: 80px;
+  line-height: 80px;
   
-  nav {
+  nav.user-nav {
     background-color: #fff;
     padding: 5px 0 5px 15px;
     margin-right: 10px;
     border-radius: 0 0 5px 5px;
     font-size: 0.8em;
+    height: 30px;
+    line-height: 30px;
     
     ul {
       li {
         display: inline-block;
         margin-right: 10px;
+      }
+    }
+  }
+  
+  nav.primary {
+    ul {
+      li {
+        a {
+          color: #fff;
+        }
+        
+        a:hover {
+          text-decoration: none;
+        }
       }
     }
   }

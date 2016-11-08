@@ -16,6 +16,15 @@
 
 @import '_variables';
   
+html, body {
+  height: 100%;  
+}
+
+.wrapper {
+  padding-bottom: 80px;
+  min-height: 100%;
+}
+
 .btn-flash {
   background-color: $primary_color;
   color: #fff;
