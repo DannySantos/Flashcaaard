@@ -30,7 +30,6 @@ Feature: Card Sets
     When they visit an edit card set page that isn't theirs
     Then they should see a card set error
 
-  @wip
   Scenario: A user deletes a card set
     Given a User has previously registered
       And they have signed in previously
