@@ -51,3 +51,8 @@ end
 Then(/^the card set should be updated$/) do
   expect(page).to have_content("Ruby Expert")
 end
+
+Then(/^the card set should be deleted$/) do
+  expect(CardSet.count).to eq(0)
+  expect(page).to have_content("Card set deleted")
+end

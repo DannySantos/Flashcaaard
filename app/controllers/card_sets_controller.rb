@@ -31,6 +31,12 @@ class CardSetsController < ApplicationController
     @card_set = CardSet.find(params[:id])
   end
   
+  def destroy
+    CardSet.find(params[:id]).destroy
+    flash[:notice] = "Card set deleted"
+    redirect_to root_path
+  end
+  
   private
   
   def card_set_params

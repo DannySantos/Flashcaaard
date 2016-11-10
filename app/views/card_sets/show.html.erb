@@ -2,6 +2,12 @@
   <%= link_to "Edit Card Set", edit_card_set_path(@card_set.id), class: "btn btn-flash dib" %>
 <% end %>
     
+<% if can? :delete, @card_set %>
+  <div class="dib">
+    <%= button_to "Delete Card Set", {controller: 'card_sets', action: 'destroy'}, method: :delete, class: "btn btn-flash" %>
+  </div>
+<% end %>
+    
 <h1><%= @card_set.title %></h1>
 
 <%= render @card_set.flashcards %>

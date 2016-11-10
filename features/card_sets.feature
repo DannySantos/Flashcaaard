@@ -29,3 +29,12 @@ Feature: Card Sets
       And there is a card set created by another user
     When they visit an edit card set page that isn't theirs
     Then they should see a card set error
+
+  @wip
+  Scenario: A user deletes a card set
+    Given a User has previously registered
+      And they have signed in previously
+      And they have created a card set
+      And they are on their card set page
+    When they click on "Delete Card Set"
+    Then the card set should be deleted
