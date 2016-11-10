@@ -23,7 +23,7 @@
   
   <div class="text-center m-10">
     <% if can? :update, @flashcard %>
-    <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash dib" %>
+      <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash dib" %>
     <% end %>
     
     <% if can? :delete, @flashcard %>

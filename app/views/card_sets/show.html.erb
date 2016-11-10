@@ -1,0 +1,7 @@
+<% if can? :update, @flashcard %>
+  <%= link_to "Edit Card Set", edit_card_set_path(@card_set.id), class: "btn btn-flash dib" %>
+<% end %>
+    
+<h1><%= @card_set.title %></h1>
+
+<%= render @card_set.flashcards %>

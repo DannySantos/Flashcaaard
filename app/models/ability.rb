@@ -6,6 +6,7 @@ class Ability
     
     unless user.id.blank?
       can :manage, Flashcard, user_id: user.id
+      can :manage, CardSet, user_id: user.id
     end
   end
 end

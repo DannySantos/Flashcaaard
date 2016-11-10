@@ -43,7 +43,7 @@ Then(/^the flashcard should be deleted$/) do
   expect(page).to have_content("Flashcard deleted")
 end
 
-Then(/^they should see an error$/) do
+Then(/^they should see a flashcard error$/) do
   expect(page).not_to have_css("form.edit_flashcard")
   expect(page).to have_content("You can't edit a flashcard that you didn't create!")
 end

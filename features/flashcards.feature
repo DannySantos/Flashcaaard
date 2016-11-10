@@ -31,7 +31,7 @@ Feature: Flashcards
     Given a User has previously registered
       And there is a flashcard created by another user
     When they visit an edit flashcard page that isn't theirs
-    Then they should see an error
+    Then they should see a flashcard error
 
   Scenario: A user deletes a flashcard
     Given a User has previously registered

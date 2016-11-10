@@ -3,6 +3,10 @@ class CardSetsController < ApplicationController
     @card_set = CardSet.new
   end
   
+  def edit
+    @card_set = CardSet.find(params[:id])
+  end
+  
   def create
     @card_set = CardSet.new(card_set_params)
     
@@ -10,6 +14,16 @@ class CardSetsController < ApplicationController
       redirect_to card_set_path(@card_set)
     else
       render :new
+    end
+  end
+  
+  def update
+    @card_set = CardSet.find(params[:id])
+    
+    if @card_set.update(card_set_params)
+      redirect_to @card_set
+    else
+      render :edit
     end
   end
   
