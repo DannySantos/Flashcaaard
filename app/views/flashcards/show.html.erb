@@ -4,10 +4,15 @@
       &lsaquo;
     </div>
     
-    <div class="flashcard col-sm-8 text-center">
-      <div class="d-tbc vam">
-        <h1><%= @flashcard.question.html_safe %></h1>
-        <%= @flashcard.answer.html_safe %>
+    <div class="flashcard flip-container col-sm-8 text-center">
+      <div class="flipper dt">
+        <div class="front d-tbc vam">
+          <h1><%= @flashcard.question.html_safe %></h1>
+        </div>
+        
+        <div class="back d-tbc vam">
+          <h2><%= @flashcard.answer.html_safe %></h2>
+        </div>
       </div>
     </div>
     
