@@ -7,6 +7,7 @@
         <div class="col-sm-8">
           <%= form_for(@card_set) do |f| %>
             <%= render "card_set_form", f: f %>
+          <%= f.submit "Create Card Set", class: "form-control btn btn-flash mt-10" %>
           <% end %>
         </div>
       <% else %>

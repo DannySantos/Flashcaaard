@@ -1,3 +1,4 @@
-tinymce.init({
-  selector: '.tinymce'
+$(document).on('turbolinks:load', function () {
+   tinymce.remove();
+   tinymce.init({selector:'.tinymce'});
 });
