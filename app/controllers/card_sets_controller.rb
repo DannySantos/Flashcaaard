@@ -9,6 +9,7 @@ class CardSetsController < ApplicationController
   
   def create
     @card_set = CardSet.new(card_set_params)
+    @card_set.user_id = current_user.id
     
     if @card_set.save
       redirect_to card_set_path(@card_set)

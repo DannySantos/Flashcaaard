@@ -1,11 +1,19 @@
-<div class="container flashcard-new">
+<main class="container flashcard-new">
   <div class="row">
-    <h1>Create a new flashcard</h1>
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>Create a new flashcard</h1>
 
-    <div class="col-sm-8">
-      <%= form_for(@flashcard) do |f| %>
-        <%= render "flashcard_form", f: f %>
-        <%= f.submit "Create Flashcard", class: "form-control btn btn-flash mt-10" %>
+      <% if current_user %>
+        <div class="col-sm-8">
+          <%= form_for(@flashcard) do |f| %>
+            <%= render "flashcard_form", f: f %>
+            <%= f.submit "Create Flashcard", class: "form-control btn btn-flash mt-10" %>
+          <% end %>
+        </div>
+      <% else %>
+        <h2>You have log in or register to create a new flashcard!</h2>
+
+        <%= render '/application/devise_forms' %>
       <% end %>
     </div>
   </div>
