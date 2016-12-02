@@ -1,8 +1,14 @@
-<%= f.label :question, "Question/Term" %>
-<%= f.text_area :question, class: "tinymce" %>
+<%= f.label :question do %>
+  <span>Question/Term</span>
+  <%= f.text_area :question, placeholder: "Question/Term" %>
+<% end %>
 
-<%= f.label :answer, "Answer/Definition" %>
-<%= f.text_area :answer, class: "tinymce" %>
+<%= f.label :answer do %>
+  <span>Answer/Definition</span>
+  <%= f.text_area :answer, placeholder: "Answer/Definition" %>
+<% end %>
 
-<%= f.label :all_tags, "Tags" %>
-<%= f.text_field :all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
+<%= f.label :all_tags do %>
+  <span>Tags</span>
+  <%= f.text_field :all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
+<% end %>

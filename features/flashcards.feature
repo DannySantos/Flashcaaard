@@ -17,7 +17,7 @@ Feature: Flashcards
       And they are on their flashcard page
     When they click on "Edit Flashcard"
       And they fill in the "flashcard_question" field with "Why the lucky stiff?"
-      And they fill in the "flashcard_answer" field with "J******n G******e"
+      And they fill in the "flashcard_answer" field with "J------n G------e"
       And they click on "Save Changes"
     Then the flashcard should be updated
 
@@ -40,4 +40,14 @@ Feature: Flashcards
       And they are on their flashcard page
     When they click on "Delete Flashcard"
     Then the flashcard should be deleted
+    
+  Scenario: A user formats their flashcard
+    Given a User has previously registered
+      And they have signed in previously
+      And they are on the new flashcard page
+    When they fill in the "flashcard_question" field with "_italic_ and **bold** and: \n    </code snippet>"
+      And they fill in the "flashcard_answer" field with "Plus `@inline_code`"
+      And they fill in the "flashcard_all_tags" field with "ruby ruby-on-rails"
+      And they click on "Create Flashcard"
+    Then they should see a properly formatted flashcard
     

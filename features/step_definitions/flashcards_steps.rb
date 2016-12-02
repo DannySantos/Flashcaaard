@@ -54,7 +54,7 @@ end
 
 Then(/^the flashcard should be updated$/) do
   expect(page).to have_content("Why the lucky stiff?")
-  expect(page).to have_content("J******n G******e")
+  expect(page).to have_content("J------n G------e")
 end
 
 Then(/^the flashcard should be created$/) do
@@ -63,4 +63,11 @@ Then(/^the flashcard should be created$/) do
   expect(page).to have_content("ruby")
   expect(page).to have_content("ruby-on-rails")
   expect(page).to have_content("uniq-tag")
+end
+
+Then(/^they should see a properly formatted flashcard$/) do
+  expect(page).to have_css("i", text: "italic")
+  expect(page).to have_css("b", text: "bold")
+  expect(page).to have_css("span.code-block", text: "</code snippet>")
+  expect(page).to have_css("span.code-inline", text: "@inline_code")
 end

@@ -7,11 +7,11 @@
     <div class="flashcard flip-container col-sm-8 text-center">
       <div class="flipper dt">
         <div class="front d-tbc vam">
-          <h1><%= @flashcard.question.html_safe %></h1>
+          <h1><%= formatted(@flashcard.question) %></h1>
         </div>
         
         <div class="back d-tbc vam">
-          <h2><%= @flashcard.answer.html_safe %></h2>
+          <h2><%= formatted(@flashcard.answer) %></h2>
         </div>
       </div>
     </div>
