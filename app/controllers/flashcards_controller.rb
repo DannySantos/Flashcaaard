@@ -12,7 +12,16 @@ class FlashcardsController < ApplicationController
     @flashcard.user_id = current_user.id
     
     if @flashcard.save
-      redirect_to flashcard_path(@flashcard)
+      if params[:card_set_flashcards]
+        c = CardSetFlashcard.create(
+          card_set_id: params[:card_set_flashcards][:card_set_id],
+          flashcard_id: @flashcard.id  
+        )
+        
+        redirect_to card_set_path(c.card_set_id)
+      else
+        redirect_to flashcard_path(@flashcard)
+      end
     else
       render :new
     end

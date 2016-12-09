@@ -30,6 +30,7 @@ class CardSetsController < ApplicationController
   
   def show
     @card_set = CardSet.find(params[:id])
+    @flashcard = Flashcard.new
   end
   
   def destroy

@@ -1,3 +1,31 @@
+<h1><%= @card_set.title %></h1>
+
+<% if @card_set.flashcards.empty? %>
+  <p>There are no flashcards in this card set!</p>  
+<% else %>
+  <%= render @card_set.flashcards unless @card_set.flashcards.first.id == nil %>
+<% end %>
+
+<%= link_to "Add New Flashcard to Set", "#new-flashcard-popup" %>
+
+<div class="popup-overlay" id="new-flashcard-popup">
+  <div class="popup col-sm-8 col-sm-offset-2">
+    <a href="" class="close"></a> 
+    
+    <%= form_for(@flashcard) do |f| %>
+      <%= render "flashcards/flashcard_form", f: f %>
+      
+      <%= fields_for :card_set_flashcards do |i| %>
+        <%= i.hidden_field :card_set_id, value: @card_set.id %>
+      <% end %>
+       
+      <%= f.submit "Add Flashcard", class: "form-control btn btn-flash mt-10" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
 <% if can? :update, @card_set %>
   <%= link_to "Edit Card Set", edit_card_set_path(@card_set.id), class: "btn btn-flash dib" %>
 <% end %>
@@ -7,7 +35,3 @@
     <%= button_to "Delete Card Set", {controller: 'card_sets', action: 'destroy'}, method: :delete, class: "btn btn-flash" %>
   </div>
 <% end %>
-    
-<h1><%= @card_set.title %></h1>
-
-<%= render @card_set.flashcards %>

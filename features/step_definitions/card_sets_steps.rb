@@ -56,3 +56,7 @@ Then(/^the card set should be deleted$/) do
   expect(CardSet.count).to eq(0)
   expect(page).to have_content("Card set deleted")
 end
+
+Then(/^it should contain the created flashcards$/) do
+  expect(CardSet.last.flashcards.count).to eq(2)
+end
