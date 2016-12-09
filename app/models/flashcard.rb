@@ -1,7 +1,7 @@
 class Flashcard < ApplicationRecord
   has_many :flashcard_tags, dependent: :destroy
   has_many :tags, through: :flashcard_tags
-  has_many :card_set_flashcards
+  has_many :card_set_flashcards, dependent: :destroy
   has_many :card_sets, through: :card_set_flashcards
   belongs_to :user
   
