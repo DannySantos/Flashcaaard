@@ -43,6 +43,18 @@
           <% end %> 
         </div> 
       </header>
+      
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "All Flashcards", flashcards_path %>
+          </li>
+          
+          <li>
+            <%= link_to "New Flashcard", new_flashcard_path %>
+          </li>
+        </ul>
+      </nav>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
