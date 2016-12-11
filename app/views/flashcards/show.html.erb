@@ -1,10 +1,10 @@
-<div class="container flashcard-show">
+<div class="container flashcard">
   <div class="row">
     <div class="flashcard-nav col-sm-2 text-center">
       &lsaquo;
     </div>
     
-    <div class="flashcard flip-container col-sm-8 text-center">
+    <div class="flashcard-card flip-container col-sm-8 text-center">
       <div class="flipper dt">
         <div class="front d-tbc vam">
           <h1><%= formatted(@flashcard.question) %></h1>
@@ -23,7 +23,7 @@
   
   <div class="tags">
     <h2>Tags: </h2>
-    <%= @tags %>
+    <%= render @tags %>
   </div>
   
   <div class="text-center m-10">

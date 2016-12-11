@@ -33,7 +33,7 @@ class FlashcardsController < ApplicationController
   
   def show
     @flashcard = Flashcard.find(params[:id])
-    @tags = @flashcard.all_tags
+    @tags = get_tags(@flashcard)
   end
   
   def update
@@ -56,5 +56,15 @@ class FlashcardsController < ApplicationController
   
   def flashcard_params
     params.require(:flashcard).permit(:question, :answer, :all_tags)
+  end
+  
+  def get_tags(flashcard)
+    tags = []
+    
+    @flashcard.all_tags.split(" ").each do |tag_name|
+      tags << Tag.where(name: tag_name).first
+    end
+    
+    tags
   end
 end

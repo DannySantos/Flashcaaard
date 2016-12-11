@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :flashcards
   resources :card_sets
+  resources :tags, only: [:show]
 end
