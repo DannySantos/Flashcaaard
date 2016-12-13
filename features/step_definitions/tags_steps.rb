@@ -21,7 +21,7 @@ Given(/^there are some flashcards without a active\-record tag$/) do
     user_id: @user.id,
     all_tags: "mythology roman-mythology"
   )
-  
+
   @non_ar_flashcard_2 = Flashcard.create!(
     question: "Who is Hades?",
     answer: "The Greek god of the underworld",
