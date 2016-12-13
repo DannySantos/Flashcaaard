@@ -21,7 +21,7 @@ Given(/^there are some flashcards without a active\-record tag$/) do
     user_id: @user.id,
     all_tags: "mythology roman-mythology"
   )
-  
+
   @non_ar_flashcard_2 = Flashcard.create!(
     question: "Who is Hades?",
     answer: "The Greek god of the underworld",
@@ -32,6 +32,18 @@ end
 
 Given(/^they are on a flashcard page with an active\-record tag$/) do
   visit flashcard_path(@ar_flashcard_1)
+end
+
+Given(/^there are some existing tags in the database$/) do
+  %w(ruby ruby-on-rails fuck).each do |tag|
+    Tag.create!(name: tag)
+  end
+end
+
+Then(/^they should see the autocomplete results$/) do
+  expect(page).to have_content('ruby')
+  expect(page).to have_content('ruby-on-rails')
+  expect(page).not_to have_content('fuck')
 end
 
 Then(/^they see all of the flashcards with the active\-record tag$/) do

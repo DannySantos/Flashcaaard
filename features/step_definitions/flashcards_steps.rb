@@ -21,7 +21,7 @@ Given(/^there is a flashcard created by another user$/) do
     password: "password",
     password_confirmation: "password"
   })
-  
+
   @non_user_flashcard = Flashcard.create!(
     question: "Why?",
     answer: "Because.",
