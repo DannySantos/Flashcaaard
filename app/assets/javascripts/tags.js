@@ -1,6 +1,6 @@
 $(function() {
-  return $('#tag_search').typeahead({
+  return $('#flashcard_all_tags').typeahead({
     name: "tag",
-    remote: "/tags/autocomplete?query=%QUERY"
+    remote: "/tags/autocomplete?flashcard[all_tags]=%QUERY"
   });
 });
