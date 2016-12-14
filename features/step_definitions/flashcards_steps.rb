@@ -39,16 +39,7 @@ When(/^they visit an edit flashcard page that isn't theirs$/) do
 end
 
 When(/^they fill in the flashcard fields with markdown$/) do
-  question = <<-eos
-    _italics_ and **bold**\n
-    ``` javascript\n
-    function hello() {\n
-      \tconsole.log('Hello World!');\n
-    }\n
-    ```
-  eos
-
-  fill_in 'flashcard[question]', with: question
+  fill_in 'flashcard[question]', with: "_italics_ and **bold**"
   fill_in 'flashcard[answer]', with: "`<p></p>`"
 end
 
@@ -80,8 +71,7 @@ Then(/^the flashcard should be created$/) do
 end
 
 Then(/^they should see a properly formatted flashcard$/) do
-  expect(page).to have_css("i", text: "italic")
-  expect(page).to have_css("b", text: "bold")
-  expect(page).to have_css("span.code-block", text: "</code snippet>")
-  expect(page).to have_css("span.code-inline", text: "@inline_code")
+  expect(page).to have_css("em", text: "italic")
+  expect(page).to have_css("strong", text: "bold")
+  expect(page).to have_css("code", text: "<p></p>")
 end

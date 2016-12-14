@@ -41,6 +41,7 @@ Feature: Flashcards
     When they click on "Delete Flashcard"
     Then the flashcard should be deleted
 
+  @wip
   Scenario: A user formats their flashcard
     Given a User has previously registered
       And they have signed in previously
