@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'searchkick'
 
 group :test do
   gem 'faker'

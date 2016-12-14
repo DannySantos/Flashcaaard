@@ -7,7 +7,7 @@ Feature: Users
       And they fill in the "user_password_confirmation" field with "password"
       And they click on "Sign up"
     Then a User should be created
-    
+
   Scenario: A User signs in
     Given a User has previously registered
       And they are on the log in page
