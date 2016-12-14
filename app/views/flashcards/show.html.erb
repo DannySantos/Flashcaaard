@@ -3,34 +3,34 @@
     <div class="flashcard-nav col-sm-2 text-center">
       &lsaquo;
     </div>
-    
+
     <div class="flashcard-card flip-container col-sm-8 text-center">
       <div class="flipper dt">
         <div class="front d-tbc vam">
-          <h1><%= formatted(@flashcard.question) %></h1>
+          <h1><%= markdown(@flashcard.question) %></h1>
         </div>
-        
+
         <div class="back d-tbc vam">
-          <h2><%= formatted(@flashcard.answer) %></h2>
+          <h2><%= markdown(@flashcard.answer) %></h2>
         </div>
       </div>
     </div>
-    
+
     <div class="flashcard-nav col-sm-2 text-center">
       &rsaquo;
     </div>
   </div>
-  
+
   <div class="tags">
     <h2>Tags: </h2>
     <%= render @tags %>
   </div>
-  
+
   <div class="text-center m-10">
     <% if can? :update, @flashcard %>
       <%= link_to "Edit Flashcard", edit_flashcard_path(@flashcard), class: "btn btn-flash dib" %>
     <% end %>
-    
+
     <% if can? :delete, @flashcard %>
       <div class="dib">
         <%= button_to "Delete Flashcard", {controller: 'flashcards', action: 'destroy'}, method: :delete, class: "btn btn-flash" %>
