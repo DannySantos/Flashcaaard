@@ -9,8 +9,6 @@ class Flashcard < ApplicationRecord
 
   validates :question, :answer, :user_id, :all_tags, presence: true
   
-  searchkick autocomplete: ['all_tags']
-
   def all_tags=(names)
     self.tags = names.split(" ").map do |name|
       Tag.where(name: name.strip).first_or_create!
@@ -19,9 +17,5 @@ class Flashcard < ApplicationRecord
 
   def all_tags
     self.tags.map(&:name).join(" ")
-  end
-
-  def autocomplete
-    render json: Tag.search(params[:flashcard][:all_tags], autocomplete: true, limit: 10)#.map(&:name)
   end
 end
