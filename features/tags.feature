@@ -9,7 +9,7 @@ Feature: Tags
     Then they see all of the flashcards with the active-record tag
       And they don't see flashcards without the active-record tag
 
-  @javascript
+  @wip @javascript
   Scenario: A user sees autocomplete suggestions when they start typing a tag name
     Given a User has previously registered
       And they have signed in previously

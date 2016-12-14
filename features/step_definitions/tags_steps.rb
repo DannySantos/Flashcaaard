@@ -41,9 +41,10 @@ Given(/^there are some existing tags in the database$/) do
 end
 
 Then(/^they should see the autocomplete results$/) do
+  sleep 1
   expect(page).to have_content('ruby')
   expect(page).to have_content('ruby-on-rails')
-  expect(page).not_to have_content('fuck')
+  expect(page).not_to have_content('foobar')
 end
 
 Then(/^they see all of the flashcards with the active\-record tag$/) do
