@@ -41,6 +41,9 @@ GEM
     addressable (2.4.0)
     arel (7.1.4)
     bcrypt (3.1.11)
+    bonsai-elasticsearch-rails (0.2.0)
+      elasticsearch-model (~> 0)
+      elasticsearch-rails (~> 0)
     builder (3.2.2)
     cancancan (1.15.0)
     capybara (2.10.1)
@@ -86,6 +89,11 @@ GEM
       elasticsearch-transport (= 5.0.0)
     elasticsearch-api (5.0.0)
       multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.9)
     elasticsearch-transport (5.0.0)
       faraday
       multi_json
@@ -250,6 +258,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   cancancan (~> 1.10)
   cucumber-rails
   database_cleaner

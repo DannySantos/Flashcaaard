@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'searchkick'
+gem 'bonsai-elasticsearch-rails'
 
 group :test do
   gem 'faker'
