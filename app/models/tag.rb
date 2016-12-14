@@ -7,4 +7,4 @@ class Tag < ApplicationRecord
   has_many :flashcards, through: :flashcard_tags
 end
 
-Tag.import
+Tag.import force: true
