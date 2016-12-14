@@ -263,6 +263,8 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  elasticsearch-model
+  elasticsearch-rails
   faker
   jbuilder (~> 2.5)
   jquery-rails
