@@ -40,7 +40,7 @@ Feature: Flashcards
       And they are on their flashcard page
     When they click on "Delete Flashcard"
     Then the flashcard should be deleted
-    
+
   Scenario: A user formats their flashcard
     Given a User has previously registered
       And they have signed in previously
