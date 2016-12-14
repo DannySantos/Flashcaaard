@@ -38,6 +38,20 @@ When(/^they visit an edit flashcard page that isn't theirs$/) do
   visit edit_flashcard_path(@non_user_flashcard)
 end
 
+When(/^they fill in the flashcard fields with markdown$/) do
+  question = <<-eos
+    _italics_ and **bold**\n
+    ``` javascript\n
+    function hello() {\n
+      \tconsole.log('Hello World!');\n
+    }\n
+    ```
+  eos
+
+  fill_in 'flashcard[question]', with: question
+  fill_in 'flashcard[answer]', with: "`<p></p>`"
+end
+
 Then(/^the flashcard should be deleted$/) do
   expect(Flashcard.count).to eq(0)
   expect(page).to have_content("Flashcard deleted")
